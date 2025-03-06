@@ -1,7 +1,4 @@
-let password = "TestUser@123";
-
-
-function generatePassword() {
+function checkPassword(password) {
     if (password.length < 8) {
         console.log(`Password should have at least 8 characters!`);
         return;
@@ -17,7 +14,7 @@ function generatePassword() {
             hasUpperCase = true;
         } else if (char >= '0' && char <= '9') {
             hasNumber = true;
-        } else if (char === '@') {
+        } else if (char === '@' || char === '#' || char === '$') {
             hasAtSymbol = true;
         }
     }
@@ -29,6 +26,3 @@ function generatePassword() {
     }
 
 }
-
-
-generatePassword(password);
