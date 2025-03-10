@@ -25,7 +25,7 @@ document.querySelectorAll('img').forEach(
              count++;
         }
     });
-console.log(`Total number of images over height of 300px : ${count}`)
+console.log(`Total number of images over height of 300px: ${count}`)
 
 //Task 2
 let countUniqueColor = 0;
