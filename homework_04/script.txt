@@ -9,3 +9,21 @@ $x("//button[text()='Start forming a habit!']")
 $x("//img[contains(@src, 'search')]")
 #5
 $x("//input[@type='checkbox']")
+
+Medium level
+#1
+document.evaluate('//h1/text()', document, null, XPathResult.STRING_TYPE, null);
+#2
+let count = 0;
+let xpathResult = document.evaluate(
+    '//img[@alt]',
+    document,
+    null,
+    XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+    null
+);
+
+count = xpathResult.snapshotLength;
+console.log(`Found ${count} images with the alt attribute.`);
+
+#3
