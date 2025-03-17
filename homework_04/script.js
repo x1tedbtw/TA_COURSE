@@ -105,8 +105,57 @@ else {
     console.log("Not all checkboxes are found!")
 }
 
+//6
+let switcher = document.evaluate("//ul[contains(@aria-label,'language switcher')]//li",
+    document,
+    null,
+    XPathResult.FIRST_ORDERED_NODE_TYPE,
+    null);
+
+let english = document.evaluate(
+    "//li[contains(@aria-label,'english')]",
+    document,
+    null,
+    XPathResult.FIRST_ORDERED_NODE_TYPE,
+    null);
+
+let ukrainian = document.evaluate(
+    "//li[contains(@aria-label,'Ua')]",
+    document,
+    null,
+    XPathResult.FIRST_ORDERED_NODE_TYPE,
+    null);
 
 
+let lang = '';
+if (english) {
+    lang = 'english';
+} else if (ukrainian){
+    lang = 'ukrainian';
+}
+
+switcher.singleNodeValue.click();
+console.log("Language toggle element was detected.")
+
+
+
+if (lang === 'english') {
+    let ukrainian = document.evaluate(
+        "//li[contains(@aria-label,'Ua')]",
+        document,
+        null,
+        XPathResult.FIRST_ORDERED_NODE_TYPE,
+        null);
+    ukrainian.singleNodeValue.click();
+} else {
+    let english = document.evaluate(
+        "//li[contains(@aria-label,'english')]",
+        document,
+        null,
+        XPathResult.FIRST_ORDERED_NODE_TYPE,
+        null);
+    english.singleNodeValue.click();
+}
 
 
 
